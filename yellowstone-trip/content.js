@@ -1,4 +1,5 @@
-window.TRIP_V2={day4:'
+window.TRIP_V2 = {
+  day4: `
         <h2>7/12 周日｜Norris + Mammoth + Lamar Valley → Canyon Village</h2>
         <p><strong>退房后沿黄石北环单向移动；当天不再折返 Gardiner。</strong></p>
         <p><strong>驾驶强度：★★★★★　步行强度：★★★☆☆</strong></p>
@@ -33,7 +34,8 @@ window.TRIP_V2={day4:'
         <h3>住宿：Canyon Village</h3>
         <p>Canyon Village 是这一晚最平衡的落脚点：不折返 Gardiner，也不会像 Lake / Grant Village 那样迫使你们过早离开 Lamar。第二天可直接从黄石峡谷开始，一路向南进入大提顿。</p>
         <p>2026年 Canyon Village–Tower Fall 的 Dunraven Pass 预计在 5月22日–10月12日开放；Mammoth 附近 Gardner River High Bridge 可能有最多约15分钟单车道延误，园内 chip sealing 可能造成最多约30分钟延误。<a href="https://www.nps.gov/yell/planyourvisit/parkroads.htm">出发前查看 Yellowstone Park Roads</a>。</p>
-      ',day5:'
+      `,
+  day5: `
         <h2>7/13 周一｜黄石峡谷与湖区 → Grand Teton 北部</h2>
         <p><strong>从 Canyon Village 出发后一路向南，不再回走北环；下午正式进入大提顿。</strong></p>
         <p><strong>驾驶强度：★★★★☆　步行强度：★★★☆☆</strong></p>
@@ -75,7 +77,8 @@ window.TRIP_V2={day4:'
           <li><strong>Jackson：</strong>餐饮与住宿选择最多，但当天还需继续向南；</li>
           <li><strong>Victor / Driggs：</strong>仅在价格差距很大时采用，次日需额外翻越 Teton Pass。</li>
         </ol>
-      ',day6:'
+      `,
+  day6: `
         <h2>7/14 周二｜Grand Teton 核心景点 → Salt Lake City</h2>
         <p><strong>驾驶强度：★★★★☆　步行强度：★★★★☆</strong></p>
         <aside class="travel-alert">
@@ -122,4 +125,5 @@ window.TRIP_V2={day4:'
         <h3>住宿：SLC Airport</h3>
         <p>抵达后还车前先加满油，检查车内和后备箱；第二天根据航班时间安排机场。</p>
         <p>2026年 Grand Teton 多处施工可能造成延误，尤其 Moose–Wilson Road；出发前查看<a href="https://www.nps.gov/grte/planyourvisit/conditions.htm">Grand Teton Current Conditions</a>。</p>
-      '};
+      `
+};
