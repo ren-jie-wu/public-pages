@@ -1,1 +1,351 @@
-(()=>{"use strict";const n="92c5df1c24fa6d0611ceda99e5bc07b255754e38",t=[`https://raw.githubusercontent.com/ren-jie-wu/public-pages/${n}/yellowstone-trip/index.html`,`https://cdn.jsdelivr.net/gh/ren-jie-wu/public-pages@${n}/yellowstone-trip/index.html`],e=[{day:1,title:"7/9｜抵达盐湖城",subtitle:"机场取车后，按到达时间选择市区方案或 Antelope Island 方案。",embedUrl:"https://www.google.com/maps/d/u/0/embed?mid=1XixH0GqXY8KUk3rT1B3a7VRo6FCvnik&ehbc=2E312F&noprof=1"},{day:2,title:"7/10｜SLC → West Yellowstone → 大棱镜一带",subtitle:"长途北上，抵达后从西门进入黄石；下午游览 Midway 与 Lower Geyser Basin。",embedUrl:"https://www.google.com/maps/d/u/0/embed?mid=1EMj1MBLmDoZ6ZyyCWrpAbbDpDMPbtpA&ehbc=2E312F&noprof=1"},{day:3,title:"7/11｜Old Faithful + Upper Geyser Basin",subtitle:"西门往返 Old Faithful；Upper Geyser Basin 内部以步行为主。",embedUrl:"https://www.google.com/maps/d/u/0/embed?mid=1aqPI-rzf1T7lrsA7wVL5pFiVlSoDl8o&ehbc=2E312F&noprof=1"},{day:4,title:"7/12｜Norris → Mammoth → Lamar Valley → Canyon Village",subtitle:"退房后沿黄石北部单向移动；傍晚看完 Lamar 后经 Dunraven Pass 前往 Canyon Village。",embedUrl:""},{day:5,title:"7/13｜Canyon → 湖区 → Grand Teton 北部",subtitle:"清晨看峡谷，随后沿 Hayden、Mud Volcano、West Thumb 南下；下午进入大提顿并可选 Colter Bay kayak。",embedUrl:""},{day:6,title:"7/14｜Grand Teton 核心景点 → Salt Lake City",subtitle:"清晨拍山景，上午 Jenny Lake 坐船徒步，下午顺路补南部景点后返回 SLC Airport。",embedUrl:""},{day:7,title:"7/15｜返程",subtitle:"以机场为核心；只有晚班机且时间充足时才补盐湖城市区。",embedUrl:"https://www.google.com/maps/d/u/0/embed?mid=1H2yT_J3OA8xm2Sv2OzZHCdZh628PQEg&ehbc=2E312F&noprof=1"}];function o(n){const t=document.getElementById(n);return t?t.closest("p")||t:null}function r(n,t,e){for(const r of function(n){const t=o(`day${n}`),e=o(`day${n+1}`);if(!t)return[];const r=[];let a=t.nextElementSibling;for(;a&&a!==e;)r.push(a),a=a.nextElementSibling;return r}(n)){if(r.matches?.(t)&&e(r))return r;const n=[...r.querySelectorAll?.(t)||[]].find(e);if(n)return n}return null}function a(n,t,e){const r=o(n),a=o(t);if(!r||!a)return;let i=r.nextElementSibling;for(;i&&i!==a;){const n=i.nextElementSibling;i.remove(),i=n}a.insertAdjacentHTML("beforebegin",e)}function i(n,t){let e=n?.nextElementSibling||null;for(;e;){if(e.matches?.(t))return e;e=e.nextElementSibling}return null}function l(n,t){n&&n.insertAdjacentElement("afterend",function(n){const t=document.createElement("aside");return t.className="travel-alert",t.innerHTML=n,t}(t))}function d(n,t,e){if(!n)return;const o=document.createTreeWalker(n,NodeFilter.SHOW_TEXT),r=[];for(;o.nextNode();)r.push(o.currentNode);r.forEach(n=>{n.nodeValue.includes(t)&&(n.nodeValue=n.nodeValue.split(t).join(e))})}!async function(){try{const n=await async function(n){let t;for(const e of n)try{const n=await fetch(e,{cache:"force-cache"});if(!n.ok)throw new Error(`HTTP ${n.status}`);return await n.text()}catch(n){t=n}throw t||new Error("无法载入归档行程")}(t),s=(new DOMParser).parseFromString(n,"text/html");document.getElementById("content").innerHTML=s.body.innerHTML,function(){const n=document.createElement("style");n.id="yellowstone-enhancements",n.textContent="\n        :root {\n          --text: #1f2937;\n          --muted: #5b6472;\n          --line: #d7dde5;\n          --soft: #f6f8fb;\n          --accent: #2f6ea5;\n          --accent-soft: #eaf3fb;\n          --warning: #9a5b13;\n          --warning-soft: #fff8e8;\n        }\n        html { scroll-behavior: smooth; background: #fff !important; }\n        body {\n          max-width: 960px !important;\n          margin: 0 auto !important;\n          padding: 32px 24px 72px !important;\n          box-sizing: border-box !important;\n          font-size: 16px !important;\n          line-height: 1.65 !important;\n          color: var(--text) !important;\n          background: #fff !important;\n          overflow-wrap: anywhere;\n        }\n        h1 {\n          font-size: 32px !important;\n          margin: 0.25em 0 0.45em !important;\n          padding-bottom: 0.28em !important;\n        }\n        h2 {\n          font-size: 23px !important;\n          margin: 1.45em 0 0.55em !important;\n          padding-left: 0.55em !important;\n        }\n        h3 { font-size: 18px !important; margin: 1em 0 0.38em !important; }\n        h4 { font-size: 16px !important; }\n        p, ul, ol { margin: 0.38em 0 0.75em !important; }\n        li { margin: 0.18em 0 !important; }\n        table {\n          display: table !important;\n          width: 100% !important;\n          font-size: 14px !important;\n          overflow: visible !important;\n        }\n        th, td { padding: 9px 10px !important; }\n        details {\n          margin: 0.8em 0 1em !important;\n          padding: 0.65em 0.8em !important;\n        }\n        summary { cursor: pointer !important; }\n        img {\n          max-height: 420px !important;\n          display: block;\n          margin-left: auto !important;\n          margin-right: auto !important;\n        }\n        figcaption { text-align: center; color: var(--muted); font-size: 0.86em; }\n        .updated-note {\n          margin: 0.8em 0 1.25em !important;\n          color: var(--muted);\n          font-size: 0.9em;\n        }\n        .travel-alert {\n          margin: 0.9em 0 1.05em;\n          padding: 0.8em 1em;\n          border: 1px solid #efd7a8;\n          border-left: 4px solid #d28b2c;\n          border-radius: 8px;\n          background: var(--warning-soft);\n          color: #65410e;\n        }\n        .travel-alert strong { color: #65410e !important; }\n        .route-map-card {\n          margin: 1em 0 1.35em;\n          padding: 0;\n          overflow: hidden;\n          border: 1px solid #dbe4ee;\n          border-radius: 12px;\n          background: #fbfdff;\n          break-inside: avoid;\n          box-shadow: 0 5px 18px rgba(31, 41, 55, 0.06);\n        }\n        .route-map-head {\n          padding: 14px 16px 10px;\n          border-bottom: 1px solid #e5ebf2;\n        }\n        .route-map-head h3 {\n          margin: 0 0 3px !important;\n          color: #1f3f5b !important;\n        }\n        .route-map-head p {\n          margin: 0 !important;\n          color: var(--muted);\n          font-size: 0.9em;\n        }\n        .route-map-embed {\n          position: relative;\n          width: 100%;\n          aspect-ratio: 4 / 3;\n          overflow: hidden;\n          background: #eef3f7;\n        }\n        .route-map-embed iframe {\n          display: block;\n          width: 100%;\n          height: 100%;\n          border: 0;\n        }\n        .route-map-foot {\n          display: grid;\n          gap: 10px;\n          padding: 12px 16px 14px;\n          border-top: 1px solid #e5ebf2;\n        }\n        .map-note {\n          margin: 0 !important;\n          color: var(--muted);\n          font-size: 0.78em;\n        }\n        @media (max-width: 680px) {\n          body {\n            padding: 18px 15px 52px !important;\n            font-size: 15px !important;\n            line-height: 1.62 !important;\n          }\n          h1 { font-size: 27px !important; }\n          h2 { font-size: 21px !important; }\n          h3 { font-size: 17px !important; }\n          table { display: block !important; overflow-x: auto !important; font-size: 13px !important; }\n          .route-map-embed { aspect-ratio: 4 / 3; }\n          .route-map-head, .route-map-foot { padding-left: 12px; padding-right: 12px; }\n        }\n        @media print {\n          body {\n            max-width: none !important;\n            padding: 0 4mm !important;\n            font-size: 11.2px !important;\n            line-height: 1.4 !important;\n          }\n          h1 { font-size: 23px !important; }\n          h2 { font-size: 17px !important; margin-top: 1em !important; }\n          h3 { font-size: 14px !important; }\n          table { font-size: 11px !important; }\n          .route-map-embed { aspect-ratio: 4 / 3; }\n          .route-map-card { box-shadow: none; }\n        }\n      ",document.head.appendChild(n)}(),function(){const n=window.TRIP_V2;if(!n)throw new Error("TRIP_V2 content missing");a("day4","day5",n.day4),a("day5","day6",n.day5),a("day6","day7",n.day6)}(),function(){const n=document.querySelector("h1"),t=n?.nextElementSibling;t&&(t.innerHTML="<strong>日期：2026年7月9日–7月15日</strong><br>\n          <strong>路线：SLC → West Yellowstone → Canyon Village → Grand Teton/Jackson → SLC</strong><br>\n          <strong>人数：3人，自驾，共住一间房或 cabin</strong>");const e=i([...document.querySelectorAll("h2")].find(n=>"行程总览"===n.textContent.trim()),"table");if(e){const n=[...e.querySelectorAll("tbody tr")],t=(t,e,o)=>{const r=n.find(n=>n.cells[0]?.textContent.trim()===t);r&&(r.cells[1].textContent=e,r.cells[2].textContent=o)};t("7/12","Norris + Mammoth + Lamar Valley → Canyon","Canyon Village"),t("7/13","Canyon + Hayden + West Thumb → Grand Teton 北部；Kayak 可选","Moran / Colter Bay / Jackson"),t("7/14","Jenny Lake + Grand Teton 南部景点 → SLC","SLC Airport")}d(document.body,"SLC → West Yellowstone → Gardiner → Grand Teton/Jackson → SLC","SLC → West Yellowstone → Canyon Village → Grand Teton/Jackson → SLC"),d(document.body,"7/12 Norris + Mammoth + Lamar Valley","7/12 Norris + Mammoth + Lamar Valley → Canyon"),d(document.body,"7/13 黄石峡谷与湖区 → 大提顿","7/13 黄石峡谷与湖区 → 大提顿北部")}(),function(){const n=i([...document.querySelectorAll("h3")].find(n=>"2. 酒店"===n.textContent.trim()),"ol");n&&(n.innerHTML="\n          <li>West Yellowstone：7/10–7/12</li>\n          <li>Canyon Village：7/12–7/13</li>\n          <li>Moran / Colter Bay / Jackson：7/13–7/14</li>\n          <li>SLC：7/9和7/14</li>");const t=[...document.querySelectorAll("li")].find(n=>n.textContent.includes("查看 SLC、West Yellowstone、Gardiner"));t&&(t.textContent="查看 SLC、West Yellowstone、Canyon Village、Colter Bay / Moran、Jackson 五地天气");const e=[...document.querySelectorAll("h3")].find(n=>"Jenny Lake"===n.textContent.trim());if(e){const n=i(e,"h2");n?.insertAdjacentHTML("beforebegin","\n          <h3>Colter Bay Kayak</h3>\n          <ul>\n            <li>出发前1–2周确认 7/13 marina 营业时间、租赁价格、最晚起租时间与取消规则；</li>\n            <li>三人优先一艘 double kayak + 一艘 single kayak；</li>\n            <li>准备快干衣物、凉鞋或水鞋、轻量毛巾、防水手机袋和小 dry bag；</li>\n            <li>当天根据雷雨、风速和湖面情况决定，不能把 kayak 当作必须完成的固定预约。</li>\n          </ul>")}const r=i(o("hotel"),"table");if(r){const n=[...r.querySelectorAll("tbody tr")],t=n.find(n=>"7/12"===n.cells[0]?.textContent.trim());t&&(t.cells[1].textContent="Canyon Village",t.cells[3].textContent="$430–520");const e=n.find(n=>n.cells[0]?.textContent.includes("总计"));e&&(e.cells[3].innerHTML="<strong>$1,730–2,240</strong>"),r.insertAdjacentHTML("afterend","\n          <p><strong>7/12住宿说明：</strong> Canyon Village 为主选；只有 Lake Village 房价明显更低、且团队接受更早离开 Lamar 时才改住 Lake。Grant Village 不建议，因为会把 Lamar 后的驾驶拖到夜间。</p>")}}(),function(){const n=i([...document.querySelectorAll("h2")].find(n=>"三个人共用即可"===n.textContent.trim()),"ul");n&&n.insertAdjacentHTML("beforeend","\n          <li>1个 10–20 L 小 dry bag 或防水收纳袋</li>\n          <li>2–3个防水手机袋</li>\n          <li>1–2条轻量速干毛巾</li>");const t=i(o("budget"),"table");if(t){const n=[...t.querySelectorAll("tbody tr")],e=(t,e,o)=>{const r=n.find(n=>n.cells[0]?.textContent.includes(t));r&&(r.cells[1].innerHTML=`<strong>${e}</strong>`,r.cells[2].innerHTML="总计"===t?`<strong>${o}</strong>`:o)};e("酒店","$1,730–2,240","$575–750"),e("机酒以外","$2,050–3,000","$685–1,000"),e("总计","$4,800–6,400","$1,600–2,135")}const e=[...document.querySelectorAll("h3")].find(n=>n.textContent.includes("活动和用品"));e&&(e.textContent="活动和用品：$365–575");const r=i(e,"table");if(r){const n=r.querySelector("tbody"),t=n?.querySelector("tr");t?.insertAdjacentHTML("afterend",'\n          <tr><td>Colter Bay kayak（两小时粗估）</td><td style="text-align: right;">$150–200</td></tr>'),r.insertAdjacentHTML("afterend","\n          <p>Kayak 预算按三人使用一艘双人艇 + 一艘单人艇、约两小时粗估；最终以2026年 marina 实际价格、税费和天气取消政策为准。</p>")}}(),function(){const n=i(o("tips"),"ul");n&&([...n.querySelectorAll("li")].forEach(n=>{n.textContent.includes("7/13为最长行程日")&&n.remove()}),n.insertAdjacentHTML("beforeend","\n        <li><strong>7/12傍晚：</strong>原则上在 7:00–7:15 PM 离开 Lamar，给 Dunraven Pass 和动物堵车留出余量。</li>\n        <li><strong>Colter Bay kayak：</strong>全程穿 PFD；雷雨、强风、低温或白浪出现时立即取消，不驶入开阔 Jackson Lake。</li>\n        <li><strong>大提顿拍照：</strong>山景最重要的地点尽量放在清晨；下午逆光时以游览为主，不为重拍推迟返程。</li>"))}(),function(){document.documentElement.lang="zh-CN",document.title="盐湖城—黄石—大提顿 7天6晚行程";const n=document.querySelector("h1"),t=n?.nextElementSibling;if(t){const n=document.createElement("p");n.className="updated-note",n.innerHTML="<strong>最后更新：2026年6月22日。</strong> Day 4 改住 Canyon Village；Day 5 加入 Grand Teton 北部与可选 Colter Bay kayak；公园道路、步道、水上活动和野生动物临时关闭情况，请在出发前一晚及每天入园前再次核对。",t.insertAdjacentElement("afterend",n)}l(r(2,"p",n=>n.textContent.includes("驾驶强度")),"<strong>开放状态提醒：</strong> Grand Prismatic Overlook 使用 Fairy Falls Trailhead 一带的步道。该区域可能因熊或其他野生动物活动临时关闭；7月9日晚和7月10日入园前需核对 Yellowstone Current Conditions。"),l(r(3,"h3",n=>n.textContent.includes("下午二选一")),"<strong>徒步方案不是固定可用：</strong> Mystic Falls、Fairy Falls 与 Biscuit Basin 均应在当天确认开放后再前往。若仍关闭，直接采用 Black Sand Basin、Old Faithful Inn 或等待其他可预测喷泉的轻松方案。"),document.querySelectorAll("body *").forEach(n=>{0===n.children.length&&n.textContent.includes("4. 确认租车保险")&&(n.textContent=n.textContent.replace("4. 确认租车保险","5. 确认租车保险"))}),document.querySelectorAll("img").forEach((n,t)=>{t>0&&(n.loading="lazy"),n.decoding="async"}),document.querySelectorAll('a[href^="http"]').forEach(n=>{n.target="_blank",n.rel="noopener noreferrer"})}(),e.forEach(n=>{if(!n.embedUrl)return;const t=r(n.day,"h2",()=>!0);if(!t)return;const e=document.createElement("section");e.className="route-map-card",e.id=`route-map-day-${n.day}`,e.innerHTML=`\n          <div class="route-map-head">\n            <h3>${n.title}｜路线地图</h3>\n            <p>${n.subtitle}</p>\n          </div>\n          <div class="route-map-embed">\n            <iframe\n              src="${n.embedUrl}"\n              title="${n.title}路线地图"\n              loading="lazy"\n              referrerpolicy="no-referrer-when-downgrade"\n              allowfullscreen\n            ></iframe>\n          </div>\n          <div class="route-map-foot">\n            <p class="map-note">地图由 Google My Maps 提供。实际驾驶时请结合当天路况、NPS 道路状态和现场封路指示。</p>\n          </div>\n        `,(r(n.day,"p",n=>n.textContent.includes("驾驶强度"))||t).insertAdjacentElement("afterend",e)})}catch(t){console.error(t),document.getElementById("content").innerHTML=`\n          <div id="loading">\n            <strong>行程正文暂时无法载入。</strong><br>\n            可先查看\n            <a href="https://github.com/ren-jie-wu/public-pages/blob/${n}/yellowstone-trip/index.html">\n              GitHub 中的归档版本\n            </a>。\n          </div>\n        `}}()})();
+(() => {
+  "use strict";
+  const n = "92c5df1c24fa6d0611ceda99e5bc07b255754e38",
+    t = [
+      `https://raw.githubusercontent.com/ren-jie-wu/public-pages/${n}/yellowstone-trip/index.html`,
+      `https://cdn.jsdelivr.net/gh/ren-jie-wu/public-pages@${n}/yellowstone-trip/index.html`,
+    ],
+    e = [
+      {
+        day: 1,
+        title: "7/9｜抵达盐湖城",
+        subtitle: "机场取车后，按到达时间选择市区方案或 Antelope Island 方案。",
+        embedUrl:
+          "https://www.google.com/maps/d/u/0/embed?mid=1XixH0GqXY8KUk3rT1B3a7VRo6FCvnik&ehbc=2E312F&noprof=1",
+      },
+      {
+        day: 2,
+        title: "7/10｜SLC → West Yellowstone → 大棱镜一带",
+        subtitle:
+          "长途北上，抵达后从西门进入黄石；下午游览 Midway 与 Lower Geyser Basin。",
+        embedUrl:
+          "https://www.google.com/maps/d/u/0/embed?mid=1EMj1MBLmDoZ6ZyyCWrpAbbDpDMPbtpA&ehbc=2E312F&noprof=1",
+      },
+      {
+        day: 3,
+        title: "7/11｜Old Faithful + Upper Geyser Basin",
+        subtitle: "西门往返 Old Faithful；Upper Geyser Basin 内部以步行为主。",
+        embedUrl:
+          "https://www.google.com/maps/d/u/0/embed?mid=1aqPI-rzf1T7lrsA7wVL5pFiVlSoDl8o&ehbc=2E312F&noprof=1",
+      },
+      {
+        day: 4,
+        title: "7/12｜Norris → Mammoth → Lamar Valley → Canyon Village",
+        subtitle:
+          "退房后沿黄石北部单向移动；傍晚看完 Lamar 后经 Dunraven Pass 前往 Canyon Village。",
+        embedUrl:
+          "https://www.google.com/maps/d/u/0/embed?mid=1X349V95ylGypdcDc5onpJnd_YEy1SFI&ehbc=2E312F&noprof=1",
+      },
+      {
+        day: 5,
+        title: "7/13｜Canyon → 湖区 → Grand Teton 北部",
+        subtitle:
+          "清晨看峡谷，随后沿 Hayden、Mud Volcano、West Thumb 南下；下午进入大提顿并可选 Colter Bay kayak。",
+        embedUrl:
+          "https://www.google.com/maps/d/u/0/embed?mid=1-PtitmyqekulbSeFx0yzHV_9Ijoxm3E&ehbc=2E312F&noprof=1",
+      },
+      {
+        day: 6,
+        title: "7/14｜Grand Teton 核心景点 → Salt Lake City",
+        subtitle:
+          "清晨拍山景，上午 Jenny Lake 坐船徒步，下午顺路补南部景点后返回 SLC Airport。",
+        embedUrl:
+          "https://www.google.com/maps/d/u/0/embed?mid=1UioPxx72NbNUVkUvcNBwagD7jBLN2ZA&ehbc=2E312F&noprof=1",
+      },
+      {
+        day: 7,
+        title: "7/15｜返程",
+        subtitle: "以机场为核心；只有晚班机且时间充足时才补盐湖城市区。",
+        embedUrl:
+          "https://www.google.com/maps/d/u/0/embed?mid=1H2yT_J3OA8xm2Sv2OzZHCdZh628PQEg&ehbc=2E312F&noprof=1",
+      },
+    ];
+  function o(n) {
+    const t = document.getElementById(n);
+    return t ? t.closest("p") || t : null;
+  }
+  function r(n, t, e) {
+    for (const r of (function (n) {
+      const t = o(`day${n}`),
+        e = o(`day${n + 1}`);
+      if (!t) return [];
+      const r = [];
+      let a = t.nextElementSibling;
+      for (; a && a !== e; ) (r.push(a), (a = a.nextElementSibling));
+      return r;
+    })(n)) {
+      if (r.matches?.(t) && e(r)) return r;
+      const n = [...(r.querySelectorAll?.(t) || [])].find(e);
+      if (n) return n;
+    }
+    return null;
+  }
+  function a(n, t, e) {
+    const r = o(n),
+      a = o(t);
+    if (!r || !a) return;
+    let i = r.nextElementSibling;
+    for (; i && i !== a; ) {
+      const n = i.nextElementSibling;
+      (i.remove(), (i = n));
+    }
+    a.insertAdjacentHTML("beforebegin", e);
+  }
+  function i(n, t) {
+    let e = n?.nextElementSibling || null;
+    for (; e; ) {
+      if (e.matches?.(t)) return e;
+      e = e.nextElementSibling;
+    }
+    return null;
+  }
+  function l(n, t) {
+    n &&
+      n.insertAdjacentElement(
+        "afterend",
+        (function (n) {
+          const t = document.createElement("aside");
+          return ((t.className = "travel-alert"), (t.innerHTML = n), t);
+        })(t),
+      );
+  }
+  function d(n, t, e) {
+    if (!n) return;
+    const o = document.createTreeWalker(n, NodeFilter.SHOW_TEXT),
+      r = [];
+    for (; o.nextNode(); ) r.push(o.currentNode);
+    r.forEach((n) => {
+      n.nodeValue.includes(t) && (n.nodeValue = n.nodeValue.split(t).join(e));
+    });
+  }
+  !(async function () {
+    try {
+      const n = await (async function (n) {
+          let t;
+          for (const e of n)
+            try {
+              const n = await fetch(e, { cache: "force-cache" });
+              if (!n.ok) throw new Error(`HTTP ${n.status}`);
+              return await n.text();
+            } catch (n) {
+              t = n;
+            }
+          throw t || new Error("无法载入归档行程");
+        })(t),
+        s = new DOMParser().parseFromString(n, "text/html");
+      ((document.getElementById("content").innerHTML = s.body.innerHTML),
+        (function () {
+          const n = document.createElement("style");
+          ((n.id = "yellowstone-enhancements"),
+            (n.textContent =
+              "\n        :root {\n          --text: #1f2937;\n          --muted: #5b6472;\n          --line: #d7dde5;\n          --soft: #f6f8fb;\n          --accent: #2f6ea5;\n          --accent-soft: #eaf3fb;\n          --warning: #9a5b13;\n          --warning-soft: #fff8e8;\n        }\n        html { scroll-behavior: smooth; background: #fff !important; }\n        body {\n          max-width: 960px !important;\n          margin: 0 auto !important;\n          padding: 32px 24px 72px !important;\n          box-sizing: border-box !important;\n          font-size: 16px !important;\n          line-height: 1.65 !important;\n          color: var(--text) !important;\n          background: #fff !important;\n          overflow-wrap: anywhere;\n        }\n        h1 {\n          font-size: 32px !important;\n          margin: 0.25em 0 0.45em !important;\n          padding-bottom: 0.28em !important;\n        }\n        h2 {\n          font-size: 23px !important;\n          margin: 1.45em 0 0.55em !important;\n          padding-left: 0.55em !important;\n        }\n        h3 { font-size: 18px !important; margin: 1em 0 0.38em !important; }\n        h4 { font-size: 16px !important; }\n        p, ul, ol { margin: 0.38em 0 0.75em !important; }\n        li { margin: 0.18em 0 !important; }\n        table {\n          display: table !important;\n          width: 100% !important;\n          font-size: 14px !important;\n          overflow: visible !important;\n        }\n        th, td { padding: 9px 10px !important; }\n        details {\n          margin: 0.8em 0 1em !important;\n          padding: 0.65em 0.8em !important;\n        }\n        summary { cursor: pointer !important; }\n        img {\n          max-height: 420px !important;\n          display: block;\n          margin-left: auto !important;\n          margin-right: auto !important;\n        }\n        figcaption { text-align: center; color: var(--muted); font-size: 0.86em; }\n        .updated-note {\n          margin: 0.8em 0 1.25em !important;\n          color: var(--muted);\n          font-size: 0.9em;\n        }\n        .travel-alert {\n          margin: 0.9em 0 1.05em;\n          padding: 0.8em 1em;\n          border: 1px solid #efd7a8;\n          border-left: 4px solid #d28b2c;\n          border-radius: 8px;\n          background: var(--warning-soft);\n          color: #65410e;\n        }\n        .travel-alert strong { color: #65410e !important; }\n        .route-map-card {\n          margin: 1em 0 1.35em;\n          padding: 0;\n          overflow: hidden;\n          border: 1px solid #dbe4ee;\n          border-radius: 12px;\n          background: #fbfdff;\n          break-inside: avoid;\n          box-shadow: 0 5px 18px rgba(31, 41, 55, 0.06);\n        }\n        .route-map-head {\n          padding: 14px 16px 10px;\n          border-bottom: 1px solid #e5ebf2;\n        }\n        .route-map-head h3 {\n          margin: 0 0 3px !important;\n          color: #1f3f5b !important;\n        }\n        .route-map-head p {\n          margin: 0 !important;\n          color: var(--muted);\n          font-size: 0.9em;\n        }\n        .route-map-embed {\n          position: relative;\n          width: 100%;\n          aspect-ratio: 4 / 3;\n          overflow: hidden;\n          background: #eef3f7;\n        }\n        .route-map-embed iframe {\n          display: block;\n          width: 100%;\n          height: 100%;\n          border: 0;\n        }\n        .route-map-foot {\n          display: grid;\n          gap: 10px;\n          padding: 12px 16px 14px;\n          border-top: 1px solid #e5ebf2;\n        }\n        .map-note {\n          margin: 0 !important;\n          color: var(--muted);\n          font-size: 0.78em;\n        }\n        @media (max-width: 680px) {\n          body {\n            padding: 18px 15px 52px !important;\n            font-size: 15px !important;\n            line-height: 1.62 !important;\n          }\n          h1 { font-size: 27px !important; }\n          h2 { font-size: 21px !important; }\n          h3 { font-size: 17px !important; }\n          table { display: block !important; overflow-x: auto !important; font-size: 13px !important; }\n          .route-map-embed { aspect-ratio: 4 / 3; }\n          .route-map-head, .route-map-foot { padding-left: 12px; padding-right: 12px; }\n        }\n        @media print {\n          body {\n            max-width: none !important;\n            padding: 0 4mm !important;\n            font-size: 11.2px !important;\n            line-height: 1.4 !important;\n          }\n          h1 { font-size: 23px !important; }\n          h2 { font-size: 17px !important; margin-top: 1em !important; }\n          h3 { font-size: 14px !important; }\n          table { font-size: 11px !important; }\n          .route-map-embed { aspect-ratio: 4 / 3; }\n          .route-map-card { box-shadow: none; }\n        }\n      "),
+            document.head.appendChild(n));
+        })(),
+        (function () {
+          const n = window.TRIP_V2;
+          if (!n) throw new Error("TRIP_V2 content missing");
+          (a("day4", "day5", n.day4),
+            a("day5", "day6", n.day5),
+            a("day6", "day7", n.day6));
+        })(),
+        (function () {
+          const n = document.querySelector("h1"),
+            t = n?.nextElementSibling;
+          t &&
+            (t.innerHTML =
+              "<strong>日期：2026年7月9日–7月15日</strong><br>\n          <strong>路线：SLC → West Yellowstone → Canyon Village → Grand Teton/Jackson → SLC</strong><br>\n          <strong>人数：3人，自驾，共住一间房或 cabin</strong>");
+          const e = i(
+            [...document.querySelectorAll("h2")].find(
+              (n) => "行程总览" === n.textContent.trim(),
+            ),
+            "table",
+          );
+          if (e) {
+            const n = [...e.querySelectorAll("tbody tr")],
+              t = (t, e, o) => {
+                const r = n.find((n) => n.cells[0]?.textContent.trim() === t);
+                r &&
+                  ((r.cells[1].textContent = e), (r.cells[2].textContent = o));
+              };
+            (t(
+              "7/12",
+              "Norris + Mammoth + Lamar Valley → Canyon",
+              "Canyon Village",
+            ),
+              t(
+                "7/13",
+                "Canyon + Hayden + West Thumb → Grand Teton 北部；Kayak 可选",
+                "Moran / Colter Bay / Jackson",
+              ),
+              t(
+                "7/14",
+                "Jenny Lake + Grand Teton 南部景点 → SLC",
+                "SLC Airport",
+              ));
+          }
+          (d(
+            document.body,
+            "SLC → West Yellowstone → Gardiner → Grand Teton/Jackson → SLC",
+            "SLC → West Yellowstone → Canyon Village → Grand Teton/Jackson → SLC",
+          ),
+            d(
+              document.body,
+              "7/12 Norris + Mammoth + Lamar Valley",
+              "7/12 Norris + Mammoth + Lamar Valley → Canyon",
+            ),
+            d(
+              document.body,
+              "7/13 黄石峡谷与湖区 → 大提顿",
+              "7/13 黄石峡谷与湖区 → 大提顿北部",
+            ));
+        })(),
+        (function () {
+          const n = i(
+            [...document.querySelectorAll("h3")].find(
+              (n) => "2. 酒店" === n.textContent.trim(),
+            ),
+            "ol",
+          );
+          n &&
+            (n.innerHTML =
+              "\n          <li>West Yellowstone：7/10–7/12</li>\n          <li>Canyon Village：7/12–7/13</li>\n          <li>Moran / Colter Bay / Jackson：7/13–7/14</li>\n          <li>SLC：7/9和7/14</li>");
+          const t = [...document.querySelectorAll("li")].find((n) =>
+            n.textContent.includes("查看 SLC、West Yellowstone、Gardiner"),
+          );
+          t &&
+            (t.textContent =
+              "查看 SLC、West Yellowstone、Canyon Village、Colter Bay / Moran、Jackson 五地天气");
+          const e = [...document.querySelectorAll("h3")].find(
+            (n) => "Jenny Lake" === n.textContent.trim(),
+          );
+          if (e) {
+            const n = i(e, "h2");
+            n?.insertAdjacentHTML(
+              "beforebegin",
+              "\n          <h3>Colter Bay Kayak</h3>\n          <ul>\n            <li>出发前1–2周确认 7/13 marina 营业时间、租赁价格、最晚起租时间与取消规则；</li>\n            <li>三人优先一艘 double kayak + 一艘 single kayak；</li>\n            <li>准备快干衣物、凉鞋或水鞋、轻量毛巾、防水手机袋和小 dry bag；</li>\n            <li>当天根据雷雨、风速和湖面情况决定，不能把 kayak 当作必须完成的固定预约。</li>\n          </ul>",
+            );
+          }
+          const r = i(o("hotel"), "table");
+          if (r) {
+            const n = [...r.querySelectorAll("tbody tr")],
+              t = n.find((n) => "7/12" === n.cells[0]?.textContent.trim());
+            t &&
+              ((t.cells[1].textContent = "Canyon Village"),
+              (t.cells[3].textContent = "$430–520"));
+            const e = n.find((n) => n.cells[0]?.textContent.includes("总计"));
+            (e && (e.cells[3].innerHTML = "<strong>$1,730–2,240</strong>"),
+              r.insertAdjacentHTML(
+                "afterend",
+                "\n          <p><strong>7/12住宿说明：</strong> Canyon Village 为主选；只有 Lake Village 房价明显更低、且团队接受更早离开 Lamar 时才改住 Lake。Grant Village 不建议，因为会把 Lamar 后的驾驶拖到夜间。</p>",
+              ));
+          }
+        })(),
+        (function () {
+          const n = i(
+            [...document.querySelectorAll("h2")].find(
+              (n) => "三个人共用即可" === n.textContent.trim(),
+            ),
+            "ul",
+          );
+          n &&
+            n.insertAdjacentHTML(
+              "beforeend",
+              "\n          <li>1个 10–20 L 小 dry bag 或防水收纳袋</li>\n          <li>2–3个防水手机袋</li>\n          <li>1–2条轻量速干毛巾</li>",
+            );
+          const t = i(o("budget"), "table");
+          if (t) {
+            const n = [...t.querySelectorAll("tbody tr")],
+              e = (t, e, o) => {
+                const r = n.find((n) => n.cells[0]?.textContent.includes(t));
+                r &&
+                  ((r.cells[1].innerHTML = `<strong>${e}</strong>`),
+                  (r.cells[2].innerHTML =
+                    "总计" === t ? `<strong>${o}</strong>` : o));
+              };
+            (e("酒店", "$1,730–2,240", "$575–750"),
+              e("机酒以外", "$2,050–3,000", "$685–1,000"),
+              e("总计", "$4,800–6,400", "$1,600–2,135"));
+          }
+          const e = [...document.querySelectorAll("h3")].find((n) =>
+            n.textContent.includes("活动和用品"),
+          );
+          e && (e.textContent = "活动和用品：$365–575");
+          const r = i(e, "table");
+          if (r) {
+            const n = r.querySelector("tbody"),
+              t = n?.querySelector("tr");
+            (t?.insertAdjacentHTML(
+              "afterend",
+              '\n          <tr><td>Colter Bay kayak（两小时粗估）</td><td style="text-align: right;">$150–200</td></tr>',
+            ),
+              r.insertAdjacentHTML(
+                "afterend",
+                "\n          <p>Kayak 预算按三人使用一艘双人艇 + 一艘单人艇、约两小时粗估；最终以2026年 marina 实际价格、税费和天气取消政策为准。</p>",
+              ));
+          }
+        })(),
+        (function () {
+          const n = i(o("tips"), "ul");
+          n &&
+            ([...n.querySelectorAll("li")].forEach((n) => {
+              n.textContent.includes("7/13为最长行程日") && n.remove();
+            }),
+            n.insertAdjacentHTML(
+              "beforeend",
+              "\n        <li><strong>7/12傍晚：</strong>原则上在 7:00–7:15 PM 离开 Lamar，给 Dunraven Pass 和动物堵车留出余量。</li>\n        <li><strong>Colter Bay kayak：</strong>全程穿 PFD；雷雨、强风、低温或白浪出现时立即取消，不驶入开阔 Jackson Lake。</li>\n        <li><strong>大提顿拍照：</strong>山景最重要的地点尽量放在清晨；下午逆光时以游览为主，不为重拍推迟返程。</li>",
+            ));
+        })(),
+        (function () {
+          ((document.documentElement.lang = "zh-CN"),
+            (document.title = "盐湖城—黄石—大提顿 7天6晚行程"));
+          const n = document.querySelector("h1"),
+            t = n?.nextElementSibling;
+          if (t) {
+            const n = document.createElement("p");
+            ((n.className = "updated-note"),
+              (n.innerHTML =
+                "<strong>最后更新：2026年6月22日。</strong> Day 4 改住 Canyon Village；Day 5 加入 Grand Teton 北部与可选 Colter Bay kayak；公园道路、步道、水上活动和野生动物临时关闭情况，请在出发前一晚及每天入园前再次核对。"),
+              t.insertAdjacentElement("afterend", n));
+          }
+          (l(
+            r(2, "p", (n) => n.textContent.includes("驾驶强度")),
+            "<strong>开放状态提醒：</strong> Grand Prismatic Overlook 使用 Fairy Falls Trailhead 一带的步道。该区域可能因熊或其他野生动物活动临时关闭；7月9日晚和7月10日入园前需核对 Yellowstone Current Conditions。",
+          ),
+            l(
+              r(3, "h3", (n) => n.textContent.includes("下午二选一")),
+              "<strong>徒步方案不是固定可用：</strong> Mystic Falls、Fairy Falls 与 Biscuit Basin 均应在当天确认开放后再前往。若仍关闭，直接采用 Black Sand Basin、Old Faithful Inn 或等待其他可预测喷泉的轻松方案。",
+            ),
+            document.querySelectorAll("body *").forEach((n) => {
+              0 === n.children.length &&
+                n.textContent.includes("4. 确认租车保险") &&
+                (n.textContent = n.textContent.replace(
+                  "4. 确认租车保险",
+                  "5. 确认租车保险",
+                ));
+            }),
+            document.querySelectorAll("img").forEach((n, t) => {
+              (t > 0 && (n.loading = "lazy"), (n.decoding = "async"));
+            }),
+            document.querySelectorAll('a[href^="http"]').forEach((n) => {
+              ((n.target = "_blank"), (n.rel = "noopener noreferrer"));
+            }));
+        })(),
+        e.forEach((n) => {
+          if (!n.embedUrl) return;
+          const t = r(n.day, "h2", () => !0);
+          if (!t) return;
+          const e = document.createElement("section");
+          ((e.className = "route-map-card"),
+            (e.id = `route-map-day-${n.day}`),
+            (e.innerHTML = `\n          <div class="route-map-head">\n            <h3>${n.title}｜路线地图</h3>\n            <p>${n.subtitle}</p>\n          </div>\n          <div class="route-map-embed">\n            <iframe\n              src="${n.embedUrl}"\n              title="${n.title}路线地图"\n              loading="lazy"\n              referrerpolicy="no-referrer-when-downgrade"\n              allowfullscreen\n            ></iframe>\n          </div>\n          <div class="route-map-foot">\n            <p class="map-note">地图由 Google My Maps 提供。实际驾驶时请结合当天路况、NPS 道路状态和现场封路指示。</p>\n          </div>\n        `),
+            (
+              r(n.day, "p", (n) => n.textContent.includes("驾驶强度")) || t
+            ).insertAdjacentElement("afterend", e));
+        }));
+    } catch (t) {
+      (console.error(t),
+        (document.getElementById("content").innerHTML =
+          `\n          <div id="loading">\n            <strong>行程正文暂时无法载入。</strong><br>\n            可先查看\n            <a href="https://github.com/ren-jie-wu/public-pages/blob/${n}/yellowstone-trip/index.html">\n              GitHub 中的归档版本\n            </a>。\n          </div>\n        `));
+    }
+  })();
+})();
