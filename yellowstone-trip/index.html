@@ -8,12 +8,6 @@
   <meta property="og:title" content="盐湖城—黄石—大提顿 7天6晚行程">
   <meta property="og:description" content="逐日自驾路线、真实地图、景点安排、住宿和准备清单。">
   <meta property="og:type" content="website">
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIINfQ3ynhIMZJkMZbdD6wTlZ0e+qbyfM0A="
-    crossorigin=""
-  >
   <style>
     html, body { margin: 0; min-height: 100%; background: #fff; }
     #loading {
@@ -29,14 +23,8 @@
 </head>
 <body>
   <main id="content">
-    <div id="loading">正在载入行程与逐日地图…</div>
+    <div id="loading">正在载入行程与路线地图…</div>
   </main>
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""
-  ></script>
   <script>
   (() => {
     "use strict";
@@ -52,111 +40,43 @@
         day: 1,
         title: "7/9｜抵达盐湖城",
         subtitle: "机场取车后，按到达时间选择市区方案或 Antelope Island 方案。",
-        points: [
-          ["SLC Airport", 40.7899, -111.9791],
-          ["Salt Lake City / 酒店", 40.7608, -111.8910],
-          ["Utah State Capitol", 40.7775, -111.8882],
-          ["Temple Square", 40.7704, -111.8919],
-          ["Antelope Island Visitor Center", 41.0564, -112.2402]
-        ],
-        routes: [
-          { name: "市区方案", mode: "driving", stopNames: ["SLC Airport", "Salt Lake City / 酒店", "Utah State Capitol", "Temple Square"] },
-          { name: "自然方案", mode: "driving", stopNames: ["SLC Airport", "Salt Lake City / 酒店", "Antelope Island Visitor Center"], dash: true }
-        ]
+        embedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1XixH0GqXY8KUk3rT1B3a7VRo6FCvnik&ehbc=2E312F&noprof=1"
       },
       {
         day: 2,
         title: "7/10｜SLC → West Yellowstone → 大棱镜一带",
         subtitle: "长途北上，抵达后从西门进入黄石；下午游览 Midway 与 Lower Geyser Basin。",
-        points: [
-          ["Salt Lake City", 40.7608, -111.8910],
-          ["West Yellowstone", 44.6621, -111.1041],
-          ["Grand Prismatic Overlook Trailhead", 44.5154, -110.8324],
-          ["Midway Geyser Basin", 44.5249, -110.8382],
-          ["Fountain Paint Pot", 44.5486, -110.8067]
-        ],
-        routes: [
-          { name: "当天驾车主线", mode: "driving", stopNames: ["Salt Lake City", "West Yellowstone", "Grand Prismatic Overlook Trailhead", "Midway Geyser Basin", "Fountain Paint Pot", "West Yellowstone"] }
-        ]
+        embedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1EMj1MBLmDoZ6ZyyCWrpAbbDpDMPbtpA&ehbc=2E312F&noprof=1"
       },
       {
         day: 3,
         title: "7/11｜Old Faithful + Upper Geyser Basin",
         subtitle: "西门往返 Old Faithful；Upper Geyser Basin 内部以步行为主。",
-        points: [
-          ["West Yellowstone", 44.6621, -111.1041],
-          ["Old Faithful", 44.4605, -110.8281],
-          ["Morning Glory Pool", 44.4752, -110.8434],
-          ["Black Sand Basin", 44.4635, -110.8525],
-          ["Biscuit Basin", 44.4840, -110.8520]
-        ],
-        routes: [
-          { name: "当天驾车主线", mode: "driving", stopNames: ["West Yellowstone", "Old Faithful", "Black Sand Basin", "Biscuit Basin", "West Yellowstone"] },
-          { name: "Upper Geyser Basin 步行示意", mode: "walking", stopNames: ["Old Faithful", "Morning Glory Pool"], dash: true, straight: true }
-        ]
+        embedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1aqPI-rzf1T7lrsA7wVL5pFiVlSoDl8o&ehbc=2E312F&noprof=1"
       },
       {
         day: 4,
         title: "7/12｜Norris → Mammoth → Lamar Valley → Gardiner",
         subtitle: "退房后沿黄石北部单向移动，傍晚从 Lamar Valley 返回 Gardiner。",
-        points: [
-          ["West Yellowstone", 44.6621, -111.1041],
-          ["Norris Geyser Basin", 44.7269, -110.7047],
-          ["Mammoth Hot Springs", 44.9766, -110.7019],
-          ["Tower Fall", 44.8911, -110.3874],
-          ["Lamar Valley", 44.9295, -110.2500],
-          ["Gardiner", 45.0319, -110.7058]
-        ],
-        routes: [
-          { name: "当天驾车主线", mode: "driving", stopNames: ["West Yellowstone", "Norris Geyser Basin", "Mammoth Hot Springs", "Tower Fall", "Lamar Valley", "Gardiner"] }
-        ]
+        embedUrl: ""
       },
       {
         day: 5,
         title: "7/13｜峡谷与湖区 → Grand Teton",
         subtitle: "从 Gardiner 南下，经 Canyon、Hayden、Mud Volcano、West Thumb 后进入大提顿。",
-        points: [
-          ["Gardiner", 45.0319, -110.7058],
-          ["Artist Point / Grand Canyon", 44.7214, -110.4793],
-          ["Hayden Valley", 44.6446, -110.4618],
-          ["Mud Volcano", 44.6250, -110.4338],
-          ["West Thumb", 44.4162, -110.5732],
-          ["Oxbow Bend", 43.8662, -110.5478],
-          ["Moran / Grand Teton lodging area", 43.8416, -110.5073]
-        ],
-        routes: [
-          { name: "当天驾车主线", mode: "driving", stopNames: ["Gardiner", "Artist Point / Grand Canyon", "Hayden Valley", "Mud Volcano", "West Thumb", "Oxbow Bend", "Moran / Grand Teton lodging area"] }
-        ]
+        embedUrl: ""
       },
       {
         day: 6,
         title: "7/14｜Grand Teton → Salt Lake City",
         subtitle: "清晨游览大提顿核心景点，下午沿 US-89 / I-15 返回 SLC Airport。",
-        points: [
-          ["Moran / Grand Teton lodging area", 43.8416, -110.5073],
-          ["Oxbow Bend", 43.8662, -110.5478],
-          ["Jenny Lake Visitor Center", 43.7517, -110.7217],
-          ["Snake River Overlook", 43.7538, -110.6245],
-          ["Mormon Row", 43.6604, -110.6644],
-          ["SLC Airport", 40.7899, -111.9791]
-        ],
-        routes: [
-          { name: "当天驾车主线", mode: "driving", stopNames: ["Moran / Grand Teton lodging area", "Oxbow Bend", "Jenny Lake Visitor Center", "Snake River Overlook", "Mormon Row", "SLC Airport"] }
-        ]
+        embedUrl: ""
       },
       {
         day: 7,
         title: "7/15｜返程",
         subtitle: "以机场为核心；只有晚班机且时间充足时才补盐湖城市区。",
-        points: [
-          ["SLC Airport hotel area", 40.7768, -111.9690],
-          ["Utah State Capitol（可选）", 40.7775, -111.8882],
-          ["Temple Square（可选）", 40.7704, -111.8919],
-          ["SLC Airport", 40.7899, -111.9791]
-        ],
-        routes: [
-          { name: "晚班机可选市区线", mode: "driving", stopNames: ["SLC Airport hotel area", "Utah State Capitol（可选）", "Temple Square（可选）", "SLC Airport"], dash: true }
-        ]
+        embedUrl: "https://www.google.com/maps/d/u/0/embed?mid=1H2yT_J3OA8xm2Sv2OzZHCdZh628PQEg&ehbc=2E312F&noprof=1"
       }
     ];
 
@@ -271,10 +191,18 @@
           color: var(--muted);
           font-size: 0.9em;
         }
-        .route-map {
+        .route-map-embed {
+          position: relative;
           width: 100%;
-          height: 430px;
+          aspect-ratio: 4 / 3;
+          overflow: hidden;
           background: #eef3f7;
+        }
+        .route-map-embed iframe {
+          display: block;
+          width: 100%;
+          height: 100%;
+          border: 0;
         }
         .route-map-foot {
           display: grid;
@@ -282,49 +210,11 @@
           padding: 12px 16px 14px;
           border-top: 1px solid #e5ebf2;
         }
-        .route-stop-list {
-          margin: 0 !important;
-          padding-left: 1.45em !important;
-          font-size: 0.88em;
-          color: #374151;
-          columns: 2;
-          column-gap: 26px;
-        }
-        .route-stop-list li { break-inside: avoid; }
-        .route-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-        .route-link {
-          display: inline-flex;
-          align-items: center;
-          min-height: 34px;
-          padding: 3px 10px;
-          border: 1px solid #b8cce0;
-          border-radius: 7px;
-          background: #fff;
-          color: #245f91 !important;
-          font-size: 0.84em;
-          font-weight: 600;
-          text-decoration: none !important;
-        }
         .map-note {
           margin: 0 !important;
           color: var(--muted);
           font-size: 0.78em;
         }
-        .numbered-marker {
-          display: grid;
-          place-items: center;
-          width: 28px !important;
-          height: 28px !important;
-          margin-left: -14px !important;
-          margin-top: -14px !important;
-          border: 2px solid #fff;
-          border-radius: 50%;
-          background: #2f6ea5;
-          color: #fff;
-          font: 700 12px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          box-shadow: 0 1px 5px rgba(0,0,0,.38);
-        }
-        .leaflet-popup-content { font-size: 13px; line-height: 1.4; }
         @media (max-width: 680px) {
           body {
             padding: 18px 15px 52px !important;
@@ -335,8 +225,7 @@
           h2 { font-size: 21px !important; }
           h3 { font-size: 17px !important; }
           table { display: block !important; overflow-x: auto !important; font-size: 13px !important; }
-          .route-map { height: 350px; }
-          .route-stop-list { columns: 1; }
+          .route-map-embed { aspect-ratio: 4 / 3; }
           .route-map-head, .route-map-foot { padding-left: 12px; padding-right: 12px; }
         }
         @media print {
@@ -350,9 +239,7 @@
           h2 { font-size: 17px !important; margin-top: 1em !important; }
           h3 { font-size: 14px !important; }
           table { font-size: 11px !important; }
-          .route-map { height: 300px; }
-          .route-actions { display: none; }
-          .route-stop-list { columns: 2; }
+          .route-map-embed { aspect-ratio: 4 / 3; }
           .route-map-card { box-shadow: none; }
         }
       `;
@@ -377,7 +264,7 @@
     function findInSection(day, selector, predicate) {
       for (const root of sectionElements(day)) {
         if (root.matches?.(selector) && predicate(root)) return root;
-        const found = [...(root.querySelectorAll?.(selector) || [])].find(predicate);
+        const found = [...root.querySelectorAll?.(selector) || []].find(predicate);
         if (found) return found;
       }
       return null;
@@ -412,7 +299,7 @@
       roots.forEach(root => {
         const candidates = [
           ...(root.matches?.("li,p,h3,h4") ? [root] : []),
-          ...(root.querySelectorAll?.("li,p,h3,h4") || [])
+          ...root.querySelectorAll?.("li,p,h3,h4") || []
         ];
         candidates.forEach(el => {
           if (patterns.some(pattern => el.textContent.toLowerCase().includes(pattern.toLowerCase()))) {
@@ -455,7 +342,42 @@
         "<strong>住宿执行建议：</strong> Moran / Colter Bay 明显优于 Jackson，可减少长日末尾继续向南驾驶的距离；Jackson 仅在房价或房源明显更合适时采用。"
       );
 
-      removeMatchingBlocks(6, ["kayak", "划船", "7 月 16 日", "7/16"]);
+      sectionElements(5).forEach(root => {
+        replaceTextIn(root,
+          "Colter Bay（短暂停留；Kayak 移至 7/14 可选活动）",
+          "Colter Bay（仅在时间充足时短暂停留）"
+        );
+      });
+
+      const kayakParagraph = findInSection(6, "p", el => el.textContent.toLowerCase().includes("colter bay kayak"));
+      if (kayakParagraph) {
+        const possibleList = kayakParagraph.nextElementSibling;
+        if (possibleList?.matches("ul,ol")) possibleList.remove();
+        kayakParagraph.remove();
+      }
+      const day6Afternoon = findInSection(6, "h3", el => el.textContent.includes("下午景点与可选活动"));
+      if (day6Afternoon) day6Afternoon.textContent = "下午景点";
+
+      const day6Roadtrip = findInSection(6, "details", el => el.textContent.includes("沿途可选顺路停留"));
+      if (day6Roadtrip) {
+        day6Roadtrip.querySelectorAll("li").forEach(li => {
+          if (li.textContent.includes("7/16")) li.remove();
+        });
+        const lavaHeading = [...day6Roadtrip.querySelectorAll("h3")].find(h => h.textContent.includes("Lava Hot Springs"));
+        if (lavaHeading) {
+          const following = lavaHeading.nextElementSibling;
+          if (following?.matches("ul,ol")) following.remove();
+          lavaHeading.remove();
+        }
+      }
+
+      sectionElements(6).forEach(root => {
+        replaceTextIn(root,
+          "行程中预留至少30分钟机动时间",
+          "Moose–Wilson Road 可能延误45分钟或更久；无明确需要时不要让导航自动带入该路段"
+        );
+      });
+
       const day6Intensity = findInSection(6, "p", el => el.textContent.includes("驾驶强度"));
       insertAlertAfter(day6Intensity,
         "<strong>返程时间线：</strong> 3:00 PM 作为离开 Grand Teton 的目标时间，4:00 PM 作为最晚时间。2026年施工期间避免让导航自动带入 Moose–Wilson Road；无明确需要时优先走 US-191 / Teton Park Road。"
@@ -477,138 +399,38 @@
       });
     }
 
-    function pointLookup(day) {
-      return new Map(day.points.map(([name, lat, lng]) => [name, { name, lat, lng }]));
-    }
-
-    function googleDirectionsUrl(stops, mode) {
-      const params = new URLSearchParams({
-        api: "1",
-        origin: `${stops[0].lat},${stops[0].lng}`,
-        destination: `${stops.at(-1).lat},${stops.at(-1).lng}`,
-        travelmode: mode === "walking" ? "walking" : "driving"
-      });
-      if (stops.length > 2) {
-        params.set("waypoints", stops.slice(1, -1).map(p => `${p.lat},${p.lng}`).join("|"));
-      }
-      return `https://www.google.com/maps/dir/?${params.toString()}`;
-    }
-
     function buildMapCards() {
       mapDays.forEach(day => {
+        if (!day.embedUrl) return;
+
         const h2 = findInSection(day.day, "h2", () => true);
         if (!h2) return;
 
         const card = document.createElement("section");
         card.className = "route-map-card";
         card.id = `route-map-day-${day.day}`;
-
-        const stopItems = day.points
-          .map(([name], index) => `<li><strong>${index + 1}.</strong> ${name}</li>`)
-          .join("");
-
-        const lookup = pointLookup(day);
-        const actionLinks = day.routes.map(route => {
-          const stops = route.stopNames.map(name => lookup.get(name)).filter(Boolean);
-          return `<a class="route-link" href="${googleDirectionsUrl(stops, route.mode)}" target="_blank" rel="noopener noreferrer">在 Google Maps 打开：${route.name}</a>`;
-        }).join("");
-
         card.innerHTML = `
           <div class="route-map-head">
             <h3>${day.title}｜路线地图</h3>
             <p>${day.subtitle}</p>
           </div>
-          <div class="route-map" id="leaflet-day-${day.day}" role="img" aria-label="${day.title}路线地图"></div>
+          <div class="route-map-embed">
+            <iframe
+              src="${day.embedUrl}"
+              title="${day.title}路线地图"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
           <div class="route-map-foot">
-            <ol class="route-stop-list">${stopItems}</ol>
-            <div class="route-actions">${actionLinks}</div>
-            <p class="map-note">底图与道路数据：OpenStreetMap；路线线条由 OSRM 公共路由服务生成。地图用于行程总览，不替代当天导航、NPS 道路状态或现场封路指示。</p>
+            <p class="map-note">地图由 Google My Maps 提供。实际驾驶时请结合当天路况、NPS 道路状态和现场封路指示。</p>
           </div>
         `;
 
         const intensity = findInSection(day.day, "p", el => el.textContent.includes("驾驶强度"));
         (intensity || h2).insertAdjacentElement("afterend", card);
       });
-    }
-
-    function markerIcon(number) {
-      return L.divIcon({
-        className: "numbered-marker",
-        html: String(number),
-        iconSize: [28, 28],
-        iconAnchor: [14, 14],
-        popupAnchor: [0, -15]
-      });
-    }
-
-    async function osrmGeometry(stops) {
-      const coordinates = stops.map(p => `${p.lng},${p.lat}`).join(";");
-      const url = `https://router.project-osrm.org/route/v1/driving/${coordinates}?overview=full&geometries=geojson&steps=false`;
-      const response = await fetch(url);
-      if (!response.ok) throw new Error(`OSRM HTTP ${response.status}`);
-      const data = await response.json();
-      const coords = data.routes?.[0]?.geometry?.coordinates;
-      if (!coords?.length) throw new Error("OSRM 未返回路线");
-      return coords.map(([lng, lat]) => [lat, lng]);
-    }
-
-    async function renderOneMap(day) {
-      const container = document.getElementById(`leaflet-day-${day.day}`);
-      if (!container) return;
-      if (!window.L) {
-        container.innerHTML = '<div style="padding:24px;color:#5b6472">地图组件未能加载，请使用下方 Google Maps 路线链接。</div>';
-        return;
-      }
-
-      const map = L.map(container, {
-        scrollWheelZoom: false,
-        zoomControl: true
-      });
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      const lookup = pointLookup(day);
-      const bounds = L.latLngBounds([]);
-      day.points.forEach(([name, lat, lng], index) => {
-        L.marker([lat, lng], { icon: markerIcon(index + 1) })
-          .addTo(map)
-          .bindPopup(`<strong>${index + 1}. ${name}</strong>`);
-        bounds.extend([lat, lng]);
-      });
-
-      const routeStyles = [
-        { color: "#2f6ea5", weight: 5, opacity: 0.85 },
-        { color: "#b46b1f", weight: 4, opacity: 0.85 }
-      ];
-
-      for (let index = 0; index < day.routes.length; index += 1) {
-        const route = day.routes[index];
-        const stops = route.stopNames.map(name => lookup.get(name)).filter(Boolean);
-        if (stops.length < 2) continue;
-        let latLngs = stops.map(p => [p.lat, p.lng]);
-        if (!route.straight && route.mode !== "walking") {
-          try {
-            latLngs = await osrmGeometry(stops);
-          } catch (error) {
-            console.warn(`Day ${day.day} route fallback:`, error);
-          }
-        }
-        const style = { ...routeStyles[index % routeStyles.length] };
-        if (route.dash || route.mode === "walking") style.dashArray = "8 7";
-        L.polyline(latLngs, style).addTo(map).bindTooltip(route.name);
-        latLngs.forEach(point => bounds.extend(point));
-      }
-
-      if (bounds.isValid()) map.fitBounds(bounds.pad(0.12), { maxZoom: 12 });
-      setTimeout(() => map.invalidateSize(), 80);
-    }
-
-    async function renderMaps() {
-      for (const day of mapDays) {
-        await renderOneMap(day);
-      }
     }
 
     async function start() {
@@ -621,7 +443,6 @@
         addOverrideStyles();
         applyContentCorrections();
         buildMapCards();
-        await renderMaps();
       } catch (error) {
         console.error(error);
         document.getElementById("content").innerHTML = `
